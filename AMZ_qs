@@ -1,0 +1,36 @@
+In Amazon's Smart Cities Management System, each city has a given population and some cities are equipped with security units.
+
+You are given:
+An integer array population of size n, where population[i] is the number of inhabitants in the i-th city.
+
+A binary string unit of length n, where unit[i] = '1' means city i has a security unit, and '0' means it does not.
+
+Relocation Rules:
+A security unit at city i (where i > 1 using 1-based indexing) can be moved one step to the left to city i-1.
+Each unit can be moved at most once.
+If moved, city i loses its unit and city i-1 gains one.
+City 1 security unit cannot be moved further left.
+A city is "protected" if it has a security unit after all relocations. Determine the maximum population that can be protected by optimally relocating the security units.
+
+
+Note: The problem uses 1-based indexing in the description, but standard 0-based arrays in code.
+
+ 
+
+Example:
+n = 5
+population = [10, 5, 8, 9, 6]
+
+unit = "01101"
+
+Optimal Strategy:
+Move unit from index 1 (value '1') to index 0. (Protects population 10).
+Keep unit at index 2 (value '1') at index 2. (Protects population 8).
+
+Move unit from index 4 (value '1') to index 3. (Protects population 9).
+Protected populations: 10 + 8 + 9 = 27. Output: 27.
+
+
+Constraints:
+1 <= n <= 10^5
+1 <= population[i] <= 10^4
